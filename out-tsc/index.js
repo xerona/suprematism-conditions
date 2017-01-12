@@ -12,8 +12,9 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 var common_1 = require('@angular/common');
-var repo_name_component_1 = require('./conditions.component');
+var conditions_component_1 = require('./conditions.component');
 var core_1 = require('@angular/core');
+var suprematism_toggle_1 = require('suprematism-toggle');
 __export(require('./conditions.component'));
 var ConditionsModule = (function () {
     function ConditionsModule() {
@@ -22,15 +23,16 @@ var ConditionsModule = (function () {
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
+                suprematism_toggle_1.ToggleModule
             ],
             declarations: [
-                repo_name_component_1.ConditionsComponent,
+                conditions_component_1.ConditionsComponent,
             ],
             exports: [
-                repo_name_component_1.ConditionsComponent,
+                conditions_component_1.ConditionsComponent,
             ],
             entryComponents: [
-                repo_name_component_1.ConditionsComponent,
+                conditions_component_1.ConditionsComponent,
             ]
         }), 
         __metadata('design:paramtypes', [])
