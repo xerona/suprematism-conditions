@@ -57,6 +57,7 @@
     "zone.js": "^0.6.23"
   },
   "dependencies": {
-    "suprematism-scss": "github:cinbcuniversal/suprematism-scss"
+    "suprematism-scss": "github:cinbcuniversal/suprematism-scss",
+    "suprematism-toggle": "github:cinbcuniversal/suprematism-toggle#develop"
   }
 }

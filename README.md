@@ -1,6 +1,6 @@
 # Suprematism Conditions
 
-An Angular 2 conditions component.
+An Angular 2 conditions builder component.
 
 
 #### Installation
@@ -23,21 +23,28 @@ we must manually run the publish prehook and save the files.
 - [`supre-conditions`](#supre-conditions)
 
 #### <a id="supre-conditions"></a> `supre-conditions`
-A component for a conditions.
+A component for building conditions.
 
 ##### Directives
-- Any Directives?
+- `color: string` - The condition builder color (eg 'red').
+- `number: number` - The condition builder number (eg 1).
+- `audienceNumber: number` - The audience size (eg 134787).
+- `audiencePercent: number` - The audience percent (eg .2325).
 
 ##### Events
-- Any Events
-
-
-## States
-- The conditions component has these states:
+- `conjunctionUpdated: and|or` - The conjunction selected.
+- `actionsUpdated: Array<sort|chooser>` - An array of the possible actions.
 
 
 ## Example
 ```html
-<supre-conditions>
+<supre-conditions
+  [color]="red"
+  [number]="1"
+  [audienceNumber]="134787"
+  [audiencePercent]=".2325"
+  (conjunctionUpdated)="log($event)"
+  (actionsUpdated)="log($event)"
+>
 </supre-conditions>
 ```
