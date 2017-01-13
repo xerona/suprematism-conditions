@@ -58,6 +58,6 @@
   },
   "dependencies": {
     "suprematism-scss": "github:cinbcuniversal/suprematism-scss",
-    "suprematism-toggle": "github:cinbcuniversal/suprematism-toggle#develop"
+    "suprematism-toggle": "github:cinbcuniversal/suprematism-toggle"
   }
 }
