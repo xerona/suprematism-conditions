@@ -1,19 +1,21 @@
 .Conditions {
-  background-color: white; }
+  background-color: white;
+  font-family: verdana; }
 
 .Conditions-lowerBar {
   display: flex;
   background-color: white;
   height: 32px;
   width: 100%;
-  border: 1px solid gray; }
+  border: 1px solid #c2cdd8; }
 
 .Conditions-numberContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 32px;
-  height: 32px; }
+  height: 32px;
+  margin-left: 6px; }
 
 .Conditions-number {
   width: 24px;
@@ -23,12 +25,12 @@
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1em; }
+  font-size: .7em; }
 
 .Conditions-match {
   display: flex;
   align-items: center;
-  text-transform: uppercase; }
+  color: #55595c; }
 
 .Conditions-matchText {
   padding-left: 10px;
@@ -38,3 +40,7 @@
 
 .Conditions-actions {
   margin-left: auto; }
+
+supre-toggle {
+  display: block;
+  margin-top: -1px; }

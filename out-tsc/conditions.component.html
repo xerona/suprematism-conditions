@@ -17,12 +17,12 @@
     >
     </supre-toggle>
     <div *ngIf="(store$ | async).conjunction" class="Conditions-match">
-      <span class="Conditions-matchText">Meets <b>any</b> of the selected</span>
+      <span class="Conditions-matchText">Meets <b>{{ (store$ | async).conjunction === 'and' ? 'ALL' : 'ANY' }}</b> of the selected</span>
       |
-      <span class="Conditions-matchText">Estimated audience: <b>{{audienceNumber | number }} | %{{audiencePercent * 100 | number : '1.2-2'}}</b></span>
+      <span class="Conditions-matchText">Estimated audience: <b>{{audienceNumber | number }} | {{audiencePercent * 100 | number : '1.2-2'}}%</b></span>
     </div>
     <div *ngIf="!(store$ | async).conjunction" class="Conditions-match">
-      <span class="Conditions-matchText">Select an operator to begin building condition</span>
+      <span class="Conditions-matchText">Select an operator to begin building this condition</span>
     </div>
     <div class="Conditions-actions">
       <supre-toggle
