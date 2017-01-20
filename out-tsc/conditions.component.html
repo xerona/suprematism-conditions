@@ -29,9 +29,9 @@
         (toggleUpdated)="onActionsGroupChange($event)"
         [unrelated]="true"
         [items]="[
-          {icon: 'ion-ios-loop-strong', value: 'clear', disabled: !(store$ | async).conjunction},
-          {icon: 'ion-funnel', value: 'sort', disabled: !(store$ | async).conjunction},
-          {icon: 'ion-android-arrow-dropdown-circle', value: 'chooser', disabled: !(store$ | async).conjunction}
+          {icon: 'u-supre-icon u-supre-icon--refresh-clear', value: 'clear', disabled: !(store$ | async).conjunction},
+          {icon: 'u-supre-icon u-supre-icon--filter', value: 'sort', disabled: !(store$ | async).conjunction},
+          {icon: 'u-supre-icon u-supre-icon--arrow-down-filled', value: 'chooser', disabled: !(store$ | async).conjunction}
         ]"
       >
       </supre-toggle>
