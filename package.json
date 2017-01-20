@@ -28,7 +28,7 @@
   "private": true,
   "peerDependencies": {
     "@angular/core": "^2.0.0",
-    "ionicons": "^3.0.0"
+    "suprematism-font-icons": "github:cinbcuniversal/suprematism-font-icons"
   },
   "devDependencies": {
     "@angular/common": "2.0.0",
