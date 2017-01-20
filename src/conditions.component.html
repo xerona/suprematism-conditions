@@ -29,7 +29,7 @@
         (toggleUpdated)="onActionsGroupChange($event)"
         [unrelated]="true"
         [items]="[
-          {icon: 'ion-ios-loop-strong', value: 'something?', disabled: true},
+          {icon: 'ion-ios-loop-strong', value: 'clear', disabled: !(store$ | async).conjunction},
           {icon: 'ion-funnel', value: 'sort', disabled: !(store$ | async).conjunction},
           {icon: 'ion-android-arrow-dropdown-circle', value: 'chooser', disabled: !(store$ | async).conjunction}
         ]"
