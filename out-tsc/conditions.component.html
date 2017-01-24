@@ -11,31 +11,31 @@
     <supre-toggle
       [storeSource]="storeSource"
       [storeStream]="storeStream"
-      key="conjunction"
+      [key]="conjunctionKey"
       [items]="[
         {text: 'and'},
         {text: 'or'}
       ]"
     >
     </supre-toggle>
-    <div *ngIf="(storeStream | async).conjunction" class="Conditions-match">
-      <span class="Conditions-matchText">Meets <b>{{ (storeStream | async).conjunction === 'and' ? 'ALL' : 'ANY' }}</b> of the selected</span>
+    <div *ngIf="(storeStream | async)[conjunctionKey]" class="Conditions-match">
+      <span class="Conditions-matchText">Meets <b>{{ (storeStream | async)[conjunctionKey] === 'and' ? 'ALL' : 'ANY' }}</b> of the selected</span>
       |
       <span class="Conditions-matchText">Estimated audience: <b>{{audienceNumber | number }} | {{audiencePercent * 100 | number : '1.2-2'}}%</b></span>
     </div>
-    <div *ngIf="!(storeStream | async).conjunction" class="Conditions-match">
+    <div *ngIf="!(storeStream | async)[conjunctionKey]" class="Conditions-match">
       <span class="Conditions-matchText">Select an operator to begin building this condition</span>
     </div>
     <div class="Conditions-actions">
       <supre-toggle
         [storeSource]="storeSource"
         [storeStream]="storeStream"
-        key="actions"
+        [key]="actionsKey"
         [unrelated]="true"
         [items]="[
-          {icon: 'u-supre-icon u-supre-icon--refresh-clear', value: 'clear', disabled: !(storeStream | async).conjunction},
-          {icon: 'u-supre-icon u-supre-icon--filter', value: 'sort', disabled: !(storeStream | async).conjunction},
-          {icon: 'u-supre-icon u-supre-icon--arrow-down-filled', value: 'chooser', disabled: !(storeStream | async).conjunction}
+          {icon: 'u-supre-icon u-supre-icon--refresh-clear', value: 'clear', disabled: !(storeStream | async)[conjunctionKey]},
+          {icon: 'u-supre-icon u-supre-icon--filter', value: 'sort', disabled: !(storeStream | async)[conjunctionKey]},
+          {icon: 'u-supre-icon u-supre-icon--arrow-down-filled', value: 'chooser', disabled: !(storeStream | async)[conjunctionKey]}
         ]"
       >
       </supre-toggle>

@@ -45,6 +45,14 @@ var ConditionsComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Observable_1.Observable)
     ], ConditionsComponent.prototype, "storeStream", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ConditionsComponent.prototype, "actionsKey", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ConditionsComponent.prototype, "conjunctionKey", void 0);
     ConditionsComponent = __decorate([
         core_1.Component({
             selector: 'supre-conditions',

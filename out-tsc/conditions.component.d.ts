@@ -15,4 +15,6 @@ export declare class ConditionsComponent {
     audiencePercent: number;
     storeSource: Subject<any>;
     storeStream: Observable<any>;
+    actionsKey: string;
+    conjunctionKey: string;
 }

@@ -24,5 +24,7 @@ export class ConditionsComponent {
   @Input() audiencePercent: number;
   @Input() storeSource: Subject<any>;
   @Input() storeStream: Observable<any>;
+  @Input() actionsKey: string;
+  @Input() conjunctionKey: string;
 
 }
