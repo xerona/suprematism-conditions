@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Observable_1 = require('rxjs/Observable');
 var Subject_1 = require('rxjs/Subject');
 require('rxjs/add/operator/startWith');
 require('rxjs/add/operator/distinctUntilChanged');
@@ -19,44 +20,7 @@ require('rxjs/add/operator/map');
 var ConditionsComponent = (function () {
     function ConditionsComponent() {
         this.subscriptions = [];
-        this.conjunctionUpdated = new core_1.EventEmitter();
-        this.actionsUpdated = new core_1.EventEmitter();
-        this.storeSource = new Subject_1.Subject();
     }
-    ConditionsComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        var startWithObj = {
-            conjunction: false,
-            actions: [],
-        };
-        this.store$ = this.storeSource
-            .startWith(startWithObj)
-            .scan(function (last, current) {
-            if (last === void 0) { last = {}; }
-            return Object.assign({}, last, current);
-        })
-            .distinctUntilChanged(function (x, y) { return JSON.stringify(x) === JSON.stringify(y); });
-        (_a = this.subscriptions).push.apply(_a, [
-            this.store$
-                .map(function (obj) { return obj.conjunction; })
-                .distinctUntilChanged()
-                .subscribe(function (conjunction) { return _this.conjunctionUpdated.emit(conjunction); }),
-            this.store$
-                .map(function (obj) { return obj.actions; })
-                .distinctUntilChanged(function (x, y) { return JSON.stringify(x) === JSON.stringify(y); })
-                .subscribe(function (conjunction) { return _this.actionsUpdated.emit(conjunction); })
-        ]);
-        var _a;
-    };
-    ConditionsComponent.prototype.ngOnDestroy = function () {
-        this.subscriptions.forEach(function (sub) { return sub.unsubscribe(); });
-    };
-    ConditionsComponent.prototype.onConjunctionChange = function (conjunction) {
-        this.storeSource.next({ conjunction: conjunction });
-    };
-    ConditionsComponent.prototype.onActionsGroupChange = function (actions) {
-        this.storeSource.next({ actions: actions });
-    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
@@ -74,13 +38,13 @@ var ConditionsComponent = (function () {
         __metadata('design:type', Number)
     ], ConditionsComponent.prototype, "audiencePercent", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], ConditionsComponent.prototype, "conjunctionUpdated", void 0);
+        core_1.Input(), 
+        __metadata('design:type', Subject_1.Subject)
+    ], ConditionsComponent.prototype, "storeSource", void 0);
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], ConditionsComponent.prototype, "actionsUpdated", void 0);
+        core_1.Input(), 
+        __metadata('design:type', Observable_1.Observable)
+    ], ConditionsComponent.prototype, "storeStream", void 0);
     ConditionsComponent = __decorate([
         core_1.Component({
             selector: 'supre-conditions',
